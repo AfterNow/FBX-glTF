@@ -24,4 +24,8 @@ RUN wget http://download.autodesk.com/us/fbx/2018/2018.1.1/fbx20181_1_fbxsdk_lin
 COPY . /FBX-glTF
 
 RUN expect -f ./FBX-glTF/maya-install.expect
-RUN cmake .. -DCMAKE_BUILD_TYPE=Release -DFBX_SDK=/usr/include/fbxsdk
+RUN cd FBX-glTF &&\
+    mkdir build &&\
+    cd build &&\
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DFBX_SDK=/usr/include/fbxsdk &&\
+    make
