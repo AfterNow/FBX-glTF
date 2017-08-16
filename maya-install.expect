@@ -1,0 +1,5 @@
+spawn /fbx20181_1_fbxsdk_linux /usr
+expect "Agree"
+send "yes\r"
+expect "ReadMe"
+send "n\r"
